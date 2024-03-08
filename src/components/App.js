@@ -11,8 +11,8 @@ const App = () => {
       <h2>Surreal Estate</h2>
       <NavBar />
       <Routes>
-      <Route path="/Properties" element={<Properties />} />
-      <Route path="/AddProperty" element={<AddProperty />} />
+        <Route path="/Properties" element={<Properties />} />
+        <Route path="/AddProperty" element={<AddProperty />} />
       </Routes>
     </div>
   );

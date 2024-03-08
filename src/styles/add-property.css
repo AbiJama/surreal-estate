@@ -1,0 +1,17 @@
+.add-property {
+    padding: 30px;
+    color: rebeccapurple;
+  }
+  
+label {
+    display: block; /* Ensure labels are on a new line */
+    margin-bottom: 5px; /* Add some spacing between labels */
+    font-weight: bold; /* Make labels bold */
+    width: 120px;
+  }
+  
+  input, select {
+    width: 100%; /* Make input and select elements fill the container width */
+    padding: 8px; /* Add padding for a comfortable input area */
+    margin-bottom: 10px; /* Add space between input fields */
+  }
