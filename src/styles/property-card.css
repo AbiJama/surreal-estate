@@ -1,0 +1,23 @@
+.property-card {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .property-info p {
+    margin: 5px 0;
+  }
+  
+  .contact-info {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin: 0;
+    font-weight: bold;
+  }

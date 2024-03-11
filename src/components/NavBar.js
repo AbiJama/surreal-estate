@@ -11,10 +11,13 @@ const NavBar = () => {
       <img src={surrealLogoUrl} alt="Surreal Logo" className="navbar-logo" />
       <ul className="navbar-links">
         <li className="navbar-links-item">
-          <NavLink to="/Properties">View Properties</NavLink>
+          <NavLink to="/">View Properties</NavLink>
         </li>
         <li className="navbar-links-item">
           <NavLink to="/AddProperty">Add a Property</NavLink>
+        </li>
+        <li className="navbar-links-item">
+          <NavLink to="/PropertyCard">Property Card</NavLink>
         </li>
       </ul>
     </div>

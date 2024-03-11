@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import "../index.css";
+import PropertyCard from "./PropertyCard";
 
 const App = () => {
   return (
@@ -11,8 +12,9 @@ const App = () => {
       <h2>Surreal Estate</h2>
       <NavBar />
       <Routes>
-        <Route path="/Properties" element={<Properties />} />
+        <Route path="/" element={<Properties />} />
         <Route path="/AddProperty" element={<AddProperty />} />
+        <Route path="/PropertyCard" element={<PropertyCard />} />
       </Routes>
     </div>
   );

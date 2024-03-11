@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import Alert from "./Alert";
 import "../styles/add-property.css";
 
 const initialState = {
@@ -13,10 +15,30 @@ const initialState = {
 
 const AddProperty = () => {
   const [fields, setFields] = useState(initialState);
+  const [alert, setAlert] = useState({
+    message: "",
+    isSuccess: false,
+  });
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    setAlert({ message: "", isSuccess: false });
+
+    axios
+      .post("http://localhost:3000/api/v1/PropertyListing", fields)
+      .then((response) => {
+        setAlert({
+          message: "Property Added",
+          isSuccess: true,
+        });
+      })
+
+      .catch((error) => {
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
+      });
   };
 
   const handleFieldChange = (event) => {
@@ -38,13 +60,10 @@ const AddProperty = () => {
               name="title"
               value={fields.title}
               onChange={handleFieldChange}
-              placeholder="Enter property title"
+              placeholder="Enter property description"
             />
           </label>
         </div>
-
-        {/* Add other fields similarly */}
-        {/* ... */}
 
         <div>
           <label htmlFor="city">
@@ -59,12 +78,10 @@ const AddProperty = () => {
               <option value="Leeds">Leeds</option>
               <option value="Sheffield">Sheffield</option>
               <option value="Liverpool">Liverpool</option>
+              <option value="London">London</option>
             </select>
           </label>
         </div>
-
-        {/* Add other select dropdowns similarly */}
-        {/* ... */}
 
         <div>
           <label htmlFor="type">
@@ -85,21 +102,37 @@ const AddProperty = () => {
             </select>
           </label>
         </div>
+
         <div>
-  <label htmlFor="email">
-    Email:
-  <input
-    type="email"
-    id="email"
-    name="email"
-    value={fields.email}
-    onChange={handleFieldChange}
-    placeholder="Enter email address"
-  />
-  </label>
-</div>
+          <label htmlFor="price">
+            Price
+            <input
+              type="text"
+              id="price"
+              name="price"
+              value={fields.price}
+              onChange={handleFieldChange}
+              placeholder="Enter property price"
+            />
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="email">
+            Email:
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={fields.email}
+              onChange={handleFieldChange}
+              placeholder="Enter email address"
+            />
+          </label>
+        </div>
 
         <button type="submit">Add</button>
+        <Alert message={alert.message} success={alert.isSuccess} />
       </form>
     </div>
   );
