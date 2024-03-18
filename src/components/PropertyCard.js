@@ -7,7 +7,6 @@ import {
   faMapMarkerAlt,
   faMoneyBillWave,
   faBuilding,
-  faMessage,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/property-card.css";

@@ -14,7 +14,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Properties />} />
         <Route path="/AddProperty" element={<AddProperty />} />
-        <Route path="/PropertyCard" element={<PropertyCard />} />
       </Routes>
     </div>
   );

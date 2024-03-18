@@ -16,9 +16,6 @@ const NavBar = () => {
         <li className="navbar-links-item">
           <NavLink to="/AddProperty">Add a Property</NavLink>
         </li>
-        <li className="navbar-links-item">
-          <NavLink to="/PropertyCard">Property Card</NavLink>
-        </li>
       </ul>
     </div>
   );
